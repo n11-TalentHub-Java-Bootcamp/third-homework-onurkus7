@@ -1,18 +1,12 @@
 package com.onurkus.springboot.controller;
 
 import com.onurkus.springboot.converter.ReviewConverter;
-import com.onurkus.springboot.converter.UserConverter;
 import com.onurkus.springboot.dto.ReviewDto;
-import com.onurkus.springboot.dto.UserDto;
 import com.onurkus.springboot.entity.ProductReview;
-import com.onurkus.springboot.entity.User;
-import com.onurkus.springboot.service.entityservice.CategoryEntityService;
 import com.onurkus.springboot.service.entityservice.ReviewEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("api/reviews")

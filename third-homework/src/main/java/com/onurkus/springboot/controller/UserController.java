@@ -1,19 +1,14 @@
 package com.onurkus.springboot.controller;
 
-import com.onurkus.springboot.converter.CategoryConverter;
 import com.onurkus.springboot.converter.UserConverter;
-import com.onurkus.springboot.dto.CategoryDto;
 import com.onurkus.springboot.dto.UserDto;
-import com.onurkus.springboot.entity.Category;
 import com.onurkus.springboot.entity.User;
 import com.onurkus.springboot.service.entityservice.UserEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.List;
 
 @RestController
