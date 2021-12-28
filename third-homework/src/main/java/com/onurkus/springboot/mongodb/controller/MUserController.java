@@ -16,17 +16,17 @@ public class MUserController {
     @Autowired
     private MUserService userService;
 
-    @GetMapping("")
+    @GetMapping("/")
     public List<MUser> findAll() {
         return userService.findAll();
     }
 
-    @GetMapping("/")
+    @GetMapping("/{id}")
     public MUser findById(@PathVariable String id) {
         return userService.findById(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/")
     public ResponseEntity<Object> save(@RequestBody MUser user) {
 
         user = userService.save(user);
@@ -34,9 +34,9 @@ public class MUserController {
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable String id){
-
+        userService.delete(id);
     }
 
 }

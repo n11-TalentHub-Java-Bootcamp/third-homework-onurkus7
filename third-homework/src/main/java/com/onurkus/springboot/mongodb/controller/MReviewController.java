@@ -16,17 +16,17 @@ public class MReviewController {
     @Autowired
     private MReviewService reviewService;
 
-    @GetMapping("")
+    @GetMapping("/")
     public List<MProductReview> findAll() {
         return reviewService.findAll();
     }
 
-    @GetMapping("/")
+    @GetMapping("/{id}")
     public MProductReview findById(@PathVariable String id) {
         return reviewService.findById(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/")
     public ResponseEntity<Object> save(@RequestBody MProductReview productReview) {
 
         productReview = reviewService.save(productReview);
@@ -34,8 +34,9 @@ public class MReviewController {
         return new ResponseEntity<>(productReview, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteReview(@PathVariable String id){
-
+        reviewService.delete(id);
     }
+
 }
